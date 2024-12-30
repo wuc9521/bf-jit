@@ -25,7 +25,7 @@ export class Op {
     public type: OpType,
     public operand: number = 1,
     public targets: Target[] | null = null,
-    public jitCount: number = 0  // 用于追踪执行次数
+    public jitCount: number = 0  
   ) {}
 }
 
@@ -39,10 +39,8 @@ export enum CharCode {
   LB = 91,    // '['
   RB = 93     // ']'
 }
-
-// JIT 编译的代码块
 export interface CompiledBlock {
   startPc: number;
   endPc: number;
-  code: (cells: Uint8Array, cc: number) => [number, number]; // 返回 [新cc, 新pc]
+  code: (cells: Uint8Array, cc: number) => [number, number]; 
 }

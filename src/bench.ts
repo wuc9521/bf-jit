@@ -1,7 +1,7 @@
 import fs from "fs";
 import { run } from "./interp-aot.js";
 
-// 加载测试文件
+// load benchmark files
 const hello = fs.readFileSync("bf/hello.bf");
 const bench = fs.readFileSync("bf/bench.bf");
 const hanoi = fs.readFileSync("bf/hanoi.bf");
@@ -41,7 +41,7 @@ interface Marks {
 
 const marks: Marks = {};
 
-// 运行基准测试
+// run benchmarks
 console.log("Running benchmarks...\n");
 
 console.log("Testing 'Hello, World!'...");
@@ -56,6 +56,5 @@ marks["hanoi"] = benchmark(run, 1, hanoi);
 console.log("Testing Mandelbrot...");
 marks["mandelbrot"] = benchmark(run, 1, mandelbrot);
 
-// 打印结果
 console.log("\nBenchmark results (ms):");
 console.table(marks);
