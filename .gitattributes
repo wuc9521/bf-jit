@@ -1,4 +1,5 @@
-*.bf linguist-detectable=false
+*.bf -linguist-detectable
+bf/*.bf linguist-detectable=false
 
 # See this article for reference: https://help.github.com/articles/dealing-with-line-endings/
 # Refreshing repo after line ending change:
